@@ -1,0 +1,26 @@
+SRC = $(wildcard *.cpp)
+TARGET = result
+OBJ = $(SRC:.cpp=.o)
+DEP = $(SRC:.cpp=.d)
+
+CXX = g++
+#Option for compiler
+CXXFLAGS = -O2 -g
+# CXXFLAGS = 
+
+$(TARGET): $(OBJ)
+	$(CXX) -o $@ $^
+
+%.o: %.cpp | %.d
+	$(CXX) -c $(CXXFLAGS) $<
+
+#For include essential head file
+%.d: %.cpp
+	$(CXX) -MM -o $@ $<
+
+-include $(DEP)
+
+.PHONY: clean
+clean:
+	$(RM) $(OBJ) $(DEP) $(TARGET)
+

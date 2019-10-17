@@ -1,0 +1,26 @@
+SRC = $(wildcard *.c)
+TARGET = result
+OBJ = $(SRC:.c=.o)
+DEP = $(SRC:.c=.d)
+
+CC = gcc
+#Option for compiler
+CFLAGS = -O2 -g
+# CFLAGS = 
+
+$(TARGET): $(OBJ)
+	$(CC) -o $@ $^
+
+%.o: %.c | %.d
+	$(CC) -c $(CFLAGS) $<
+
+#For include essential head file
+%.d: %.c
+	$(CC) -MM -o $@ $<
+
+-include $(DEP)
+
+.PHONY: clean
+clean:
+	$(RM) $(OBJ) $(DEP) $(TARGET)
+

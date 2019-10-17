@@ -1,0 +1,12 @@
+SRC = $(wildcard *.tex) 
+TARGET = $(SRC:.tex=.pdf) 
+
+COMPILE = xelatex
+
+$(TARGET): $(SRC)
+	$(COMPILE) $<
+
+.PHONY: clean
+clean:
+	$(RM) $(wildcard *.log) $(wildcard *.aux)  $(wildcard *.toc) 
+
