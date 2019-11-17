@@ -77,3 +77,6 @@ Is the library path environment variable set correctly?
 ```
 sudo apt purge gnuradio
 ```
+
+## 继续学习
+> If the installation worked without any trouble, you're ready to use GNU Radio! If you have no idea how to do that, read the [page on how to use GNU Radio](https://wiki.gnuradio.org/index.php/HowToUse). You probably want to connect some [Hardware](https://wiki.gnuradio.org/index.php/Hardware) to your computer to try and receive or transmit stuff. If you or your group would like to get a professional jump start on using GNU Radio and the USRP, [Corgan Labs](http://corganlabs.com/) offers a 3-day, hands-on training class that can be held at your own location.
