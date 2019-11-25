@@ -1,7 +1,4 @@
 # program
-## tempfile
-一个用来存放临时文件的文件夹，便于在各个设备间传递文件。
-=======
 ## [configfile](https://github.com/ShiGuangzhao/program/tree/master/configfile)
 用于存放一些配置文件
 
