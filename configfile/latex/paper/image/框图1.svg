@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 框图1.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="10.5in" height="7.24803in"
+		viewBox="0 0 756 521.858" xml:space="preserve" color-interpolation-filters="sRGB" class="st13">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvSubprocessMaster" v:prompt="" v:val="VT4(Box)"/>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:黑体;font-size:1.16666em}
+		.st3 {font-size:1em}
+		.st4 {font-family:Calibri;font-size:1em}
+		.st5 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st6 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st7 {fill:#ffffff;stroke:none;stroke-linecap:butt}
+		.st8 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st9 {fill:#000000;font-family:黑体;font-size:1.00001em}
+		.st10 {fill:#000000;font-family:黑体;font-size:0.666664em}
+		.st11 {font-family:黑体;font-size:1em}
+		.st12 {fill:#000000;font-family:Calibri;font-size:1.00001em}
+		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="shape2-1" v:mID="2" v:groupContext="shape" transform="translate(304.451,-419.123)">
+			<title>框</title>
+			<desc>主机树莓派</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="76.3508" cy="490.475" width="152.71" height="62.7672"/>
+			<rect x="0" y="459.091" width="152.702" height="62.7672" class="st1"/>
+			<text x="27.35" y="495.13" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>主机（树莓派）</text>		</g>
+		<g id="shape3-4" v:mID="3" v:groupContext="shape" transform="translate(136.03,-428.538)">
+			<title>框.3</title>
+			<desc>声音播放模块</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="47.7192" cy="499.89" width="95.44" height="43.937"/>
+			<rect x="0" y="477.921" width="95.4385" height="43.937" class="st1"/>
+			<text x="5.72" y="504.55" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>声音播放模块</text>		</g>
+		<g id="shape4-7" v:mID="4" v:groupContext="shape" transform="translate(530.135,-428.538)">
+			<title>框.4</title>
+			<desc>显示器</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="47.7192" cy="499.89" width="95.44" height="43.937"/>
+			<rect x="0" y="477.921" width="95.4385" height="43.937" class="st1"/>
+			<text x="26.72" y="504.55" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>显示器</text>		</g>
+		<g id="shape5-10" v:mID="5" v:groupContext="shape" transform="translate(326.627,-305.023)">
+			<title>框.5</title>
+			<desc>协调器CC2530</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.1754" cy="499.89" width="108.36" height="43.937"/>
+			<rect x="0" y="477.921" width="108.351" height="43.937" class="st1"/>
+			<text x="33.18" y="494.77" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>协调器<tspan x="18.52"
+						dy="1.298em" class="st3">（</tspan><tspan class="st4">CC</tspan><tspan class="st4">2530</tspan>）</text>		</g>
+		<g id="shape6-16" v:mID="6" v:groupContext="shape" transform="translate(123.118,-177.469)">
+			<title>框.6</title>
+			<desc>节点1CC2530</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.1754" cy="499.89" width="108.36" height="43.937"/>
+			<rect x="0" y="477.921" width="108.351" height="43.937" class="st1"/>
+			<text x="36.63" y="495.23" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>节点<tspan class="st4">1</tspan><tspan
+						x="18.52" dy="1.331em" class="st3">（</tspan><tspan class="st4">CC</tspan><tspan class="st4">2530</tspan>）</text>		</g>
+		<g id="shape7-23" v:mID="7" v:groupContext="shape" transform="translate(256.732,-139.809)">
+			<title>框.7</title>
+			<desc>节点2CC2530</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.1754" cy="499.89" width="108.36" height="43.937"/>
+			<rect x="0" y="477.921" width="108.351" height="43.937" class="st1"/>
+			<text x="36.63" y="495.23" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>节点<tspan class="st4">2</tspan><tspan
+						x="18.52" dy="1.331em" class="st3">（</tspan><tspan class="st4">CC</tspan><tspan class="st4">2530</tspan>）</text>		</g>
+		<g id="shape8-30" v:mID="8" v:groupContext="shape" transform="translate(535.868,-177.469)">
+			<title>框.8</title>
+			<desc>节点nCC2530</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.1754" cy="499.89" width="108.36" height="43.937"/>
+			<rect x="0" y="477.921" width="108.351" height="43.937" class="st1"/>
+			<text x="36.5" y="495.23" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>节点<tspan class="st4">n</tspan><tspan
+						x="18.52" dy="1.331em" class="st3">（</tspan><tspan class="st4">CC</tspan><tspan class="st4">2530</tspan>）</text>		</g>
+		<g id="shape14-37" v:mID="14" v:groupContext="shape" transform="translate(-97.9833,-128.72) rotate(-34.7575)">
+			<title>一维双向箭头</title>
+			<desc>ZigBee</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="61.5678" cy="510.919" width="123.14" height="21.8791"/>
+			<path d="M5.47 505.45 L5.47 499.98 L0 510.92 L5.47 521.86 L5.47 516.39 L117.67 516.39 L117.67 521.86 L123.14 510.92 L117.67
+						 499.98 L117.67 505.45 L5.47 505.45 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="50.7382" y="506.119" width="21.6595" height="9.59985" class="st5"/>
+			<text x="50.74" y="513.32" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>ZigBee</text>		</g>
+		<g id="shape15-41" v:mID="15" v:groupContext="shape" transform="translate(828.751,446.578) rotate(114.253)">
+			<title>一维双向箭头.15</title>
+			<desc>ZigBee</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="46.4691" cy="508.551" width="92.94" height="26.614" transform="rotate(-180)"/>
+			<path d="M6.65 501.9 L6.65 495.24 L0 508.55 L6.65 521.86 L6.65 515.2 L86.28 515.2 L86.28 521.86 L92.94 508.55 L86.28
+						 495.24 L86.28 501.9 L6.65 501.9 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="-57.2987" y="-513.351" width="21.6595" height="9.59985" transform="rotate(-180)"
+					class="st7"/>
+			<text x="-57.3" y="-506.15" transform="rotate(-180)" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>ZigBee</text>		</g>
+		<g id="shape17-45" v:mID="17" v:groupContext="shape" transform="translate(882.7,48.2775) rotate(67.3694)">
+			<title>一维双向箭头.17</title>
+			<desc>ZigBee</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="36.5516" cy="508.551" width="73.11" height="26.614" transform="rotate(-180)"/>
+			<path d="M6.65 501.9 L6.65 495.24 L0 508.55 L6.65 521.86 L6.65 515.2 L66.45 515.2 L66.45 521.86 L73.1 508.55 L66.45 495.24
+						 L66.45 501.9 L6.65 501.9 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="-47.3813" y="-513.351" width="21.6595" height="9.59985" transform="rotate(-180)"
+					class="st5"/>
+			<text x="-47.38" y="-506.15" transform="rotate(-180)" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>ZigBee</text>		</g>
+		<g id="shape18-49" v:mID="18" v:groupContext="shape" transform="translate(709.825,-223.973) rotate(29.2061)">
+			<title>一维双向箭头.18</title>
+			<desc>Zigbee</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="54.6694" cy="510.919" width="109.34" height="21.8791"/>
+			<path d="M5.47 505.45 L5.47 499.98 L0 510.92 L5.47 521.86 L5.47 516.39 L103.87 516.39 L103.87 521.86 L109.34 510.92 L103.87
+						 499.98 L103.87 505.45 L5.47 505.45 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="43.9137" y="506.119" width="21.5112" height="9.59985" class="st5"/>
+			<text x="43.91" y="513.32" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>Zigbee</text>		</g>
+		<g id="shape19-53" v:mID="19" v:groupContext="shape" transform="translate(380.445,-166.031)">
+			<title>工作表.19</title>
+			<desc>……</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="70.0306" cy="513.001" width="140.07" height="17.7143"/>
+			<rect x="0" y="504.144" width="140.061" height="17.7143" class="st8"/>
+			<text x="58.03" y="516.99" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>……</text>		</g>
+		<g id="shape20-56" v:mID="20" v:groupContext="shape" transform="translate(892.78,102.736) rotate(90)">
+			<title>一维双向箭头.20</title>
+			<desc>串口</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="35.0815" cy="511.977" width="70.17" height="19.7617" transform="rotate(-180)"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L65.22 516.92 L65.22 521.86 L70.16 511.98 L65.22
+						 502.1 L65.22 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="-43.0815" y="-517.302" width="15.9999" height="10.6501" transform="rotate(180)"
+					class="st5"/>
+			<text x="-43.08" y="-509.31" transform="rotate(180)" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>串口</text>		</g>
+		<g id="shape21-60" v:mID="21" v:groupContext="shape" transform="translate(457.153,-440.625)">
+			<title>一维双向箭头.21</title>
+			<desc>VNC或串口</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="36.4912" cy="511.977" width="72.99" height="19.7617"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L68.04 516.92 L68.04 521.86 L72.98 511.98 L68.04
+						 502.1 L68.04 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="17.507" y="506.653" width="37.9688" height="10.6501" class="st5"/>
+			<text x="17.51" y="514.64" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>VNC<tspan
+						class="st11">或串口</tspan></text>		</g>
+		<g id="shape22-65" v:mID="22" v:groupContext="shape" transform="translate(231.469,-440.625)">
+			<title>一维双向箭头.22</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="36.4912" cy="511.977" width="72.99" height="19.7617"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L68.04 516.92 L68.04 521.86 L72.98 511.98 L68.04
+						 502.1 L68.04 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="28.2453" y="507.177" width="16.4921" height="9.59985" class="st5"/>
+			<text x="28.25" y="514.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+		<g id="shape23-69" v:mID="23" v:groupContext="shape" transform="translate(162.605,-82.4333)">
+			<title>框.23</title>
+			<desc>压力传感器模块1</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.4317" cy="499.89" width="68.87" height="43.937"/>
+			<rect x="0" y="477.921" width="68.8635" height="43.937" class="st1"/>
+			<text x="4.43" y="495.5" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>压力传感器<tspan x="19.39"
+						dy="1.298em" class="st3">模块</tspan><tspan class="st4">1</tspan></text>		</g>
+		<g id="shape24-74" v:mID="24" v:groupContext="shape" transform="translate(48.0793,-99.6942)">
+			<title>框.24</title>
+			<desc>LED模块1</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.4317" cy="499.89" width="68.87" height="43.937"/>
+			<rect x="0" y="477.921" width="68.8635" height="43.937" class="st1"/>
+			<text x="10.25" y="503.88" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>LED<tspan
+						class="st11">模块</tspan>1</text>		</g>
+		<g id="shape33-78" v:mID="33" v:groupContext="shape" transform="translate(-315.593,56.3042) rotate(-51.0396)">
+			<title>一维双向箭头.33</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="22.7674" cy="511.977" width="45.54" height="19.7617"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L40.59 516.92 L40.59 521.86 L45.53 511.98 L40.59
+						 502.1 L40.59 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="14.5215" y="507.177" width="16.4921" height="9.59985" class="st5"/>
+			<text x="14.52" y="514.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+		<g id="shape34-82" v:mID="34" v:groupContext="shape" transform="translate(-251.996,641.436) rotate(-118.711)">
+			<title>一维双向箭头.34</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.7634" cy="511.977" width="47.53" height="19.7617"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L42.59 516.92 L42.59 521.86 L47.53 511.98 L42.59
+						 502.1 L42.59 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="15.5174" y="507.177" width="16.4921" height="9.59985" class="st5"/>
+			<text x="15.52" y="514.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+		<g id="shape35-86" v:mID="35" v:groupContext="shape" transform="translate(353.482,-42.5197)">
+			<title>框.35</title>
+			<desc>压力传感器模块2</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.4317" cy="499.89" width="68.87" height="43.937"/>
+			<rect x="0" y="477.921" width="68.8635" height="43.937" class="st1"/>
+			<text x="4.43" y="495.5" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>压力传感器<tspan x="19.39"
+						dy="1.298em" class="st3">模块</tspan><tspan class="st4">2</tspan></text>		</g>
+		<g id="shape36-91" v:mID="36" v:groupContext="shape" transform="translate(246.628,-42.5197)">
+			<title>框.36</title>
+			<desc>LED模块2</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.4317" cy="499.89" width="68.87" height="43.937"/>
+			<rect x="0" y="477.921" width="68.8635" height="43.937" class="st1"/>
+			<text x="10.25" y="503.88" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>LED<tspan
+						class="st11">模块</tspan>2</text>		</g>
+		<g id="shape37-95" v:mID="37" v:groupContext="shape" transform="translate(-222.724,344.176) rotate(-79.736)">
+			<title>一维双向箭头.37</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.5284" cy="511.977" width="43.06" height="19.7617"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L38.12 516.92 L38.12 521.86 L43.06 511.98 L38.12
+						 502.1 L38.12 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="13.2825" y="507.177" width="16.4921" height="9.59985" class="st5"/>
+			<text x="13.28" y="514.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+		<g id="shape38-99" v:mID="38" v:groupContext="shape" transform="translate(-10.6121,765.598) rotate(-132.375)">
+			<title>一维双向箭头.38</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="21.2408" cy="508.551" width="42.49" height="26.614" transform="rotate(180)"/>
+			<path d="M6.65 501.9 L6.65 495.24 L0 508.55 L6.65 521.86 L6.65 515.2 L35.83 515.2 L35.83 521.86 L42.48 508.55 L35.83
+						 495.24 L35.83 501.9 L6.65 501.9 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="-29.4868" y="-513.351" width="16.4921" height="9.59985" transform="rotate(180)"
+					class="st5"/>
+			<text x="-29.49" y="-506.15" transform="rotate(180)" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+		<g id="shape39-103" v:mID="39" v:groupContext="shape" transform="translate(639.798,-94.9867)">
+			<title>框.39</title>
+			<desc>压力传感器模块n</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.4317" cy="499.89" width="68.87" height="43.937"/>
+			<rect x="0" y="477.921" width="68.8635" height="43.937" class="st1"/>
+			<text x="4.43" y="495.5" class="st9" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>压力传感器<tspan x="19.28"
+						dy="1.298em" class="st3">模块</tspan><tspan class="st4">n</tspan></text>		</g>
+		<g id="shape40-108" v:mID="40" v:groupContext="shape" transform="translate(525.272,-79.2949)">
+			<title>框.40</title>
+			<desc>LED模块n</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="34.4317" cy="499.89" width="68.87" height="43.937"/>
+			<rect x="0" y="477.921" width="68.8635" height="43.937" class="st1"/>
+			<text x="10.14" y="503.88" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>LED<tspan
+						class="st11">模块</tspan>n</text>		</g>
+		<g id="shape41-112" v:mID="41" v:groupContext="shape" transform="translate(75.3226,232.807) rotate(-71.1023)">
+			<title>一维双向箭头.41</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.6879" cy="511.977" width="47.38" height="19.7617"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L42.44 516.92 L42.44 521.86 L47.38 511.98 L42.44
+						 502.1 L42.44 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="15.4418" y="507.177" width="16.4921" height="9.59985" class="st5"/>
+			<text x="15.44" y="514.38" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+		<g id="shape42-116" v:mID="42" v:groupContext="shape" transform="translate(453.623,844.945) rotate(-154.476)">
+			<title>一维双向箭头.42</title>
+			<desc>GPIO</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="33.8024" cy="511.977" width="67.61" height="19.7617" transform="rotate(180)"/>
+			<path d="M4.94 507.04 L4.94 502.1 L0 511.98 L4.94 521.86 L4.94 516.92 L62.66 516.92 L62.66 521.86 L67.6 511.98 L62.66
+						 502.1 L62.66 507.04 L4.94 507.04 Z" class="st1"/>
+			<rect v:rectContext="textBkgnd" x="-42.0483" y="-516.777" width="16.4921" height="9.59985" transform="rotate(180)"
+					class="st5"/>
+			<text x="-42.05" y="-509.58" transform="rotate(180)" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>GPIO</text>		</g>
+	</g>
+</svg>

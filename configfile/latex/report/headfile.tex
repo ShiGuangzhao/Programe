@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{ctex}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{array}  
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[top=30mm,bottom=30mm,left=20mm,right=20mm]{geometry}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true, language=bash, xleftmargin=2em, xrightmargin=1em,  aboveskip=1em}
+
+\pagestyle{fancy}
+\lhead{\kaishu~软件工程导学项目报告~}
+\rhead{\kaishu~161180111\quad 石广钊~}
+\cfoot{\thepage}
+
+%---------------------------------------------------------------------
+%	目录页设置
+%---------------------------------------------------------------------
+\titlecontents{chapter}[0em]{\heiti\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+\titlecontents{section}[2em]{\vspace{0.1\baselineskip}\songti\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+\titlecontents{subsection}[4em]{\vspace{0.1\baselineskip}\songti\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+
