@@ -10,13 +10,32 @@
 \setcounter{page}{1}
     \section{项目简介}
     \subsection{背景}
+    本项目为南京大学电子学院《软件工程导学》课程作业。项目来源于为Codility.com网站 Lesson 90: Tasks from Indeed Prime 2015 challenge中的任务1。 
+    项目要求写一个程序实现题目中要求的功能，编程语言不限，且本题对时间复杂读没有要求，只需保证正确性即可。
+
     \subsection{目的}
-    \subsection{历史}
-    \section{Scope}
-    \section{Specifications}
-    \subsection{Design Requirements}
-    \subsection{Design Criteria}
-    \subsection{Deliverables}
+    项目要求设计一个函数，对于输入字符串S，返回其中符合密码要求的最长word的长度。其中不同word之间以空格分割，word可作为密码格式需满足三个条件，即：
+    \begin{enumerate} [(1)]
+            \item 仅包含字母或数字字符（A\-Z, a\-z, 0\-9）。
+            \item 需要包含偶数个字母（0,2,4，..）。
+            \item 需要包含奇数个数字（1,3,5，..）。
+    \end{enumerate}
+
+    实现该功能的编程语言不限，字符串S长度N长度在[1..200]之间。
+    
+    \section{范围}
+    本项目中，由于Python中已经有了具有切片等功能的函数，我们使用Python进行程序的编写，需要实现一个函数：
+
+\begin{lstlisting}{language=python}
+def solution(S)
+\end{lstlisting}
+
+    编写所得程序可以先通过自己编写的程序进行测试，再通过 codility.com 网站进行测试。
+
+    \section{规格说明}
+    \subsection{设计要求}
+    \subsection{设计标准}
+    \subsection{成果交付}
     \section{方法}
 
 \end{spacing}
