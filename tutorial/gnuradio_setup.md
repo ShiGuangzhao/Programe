@@ -1,7 +1,6 @@
 # 安装GNU RADIO
 [参考](https://wiki.gnuradio.org/index.php/UbuntuInstall#Building_GNU_Radio_on_Ubuntu_Linux)
 ## 依赖安装
-
 ```bash 
 sudo apt install git cmake g++ libboost-all-dev libgmp-dev swig python3-numpy \
 python3-mako python3-sphinx python3-lxml doxygen libfftw3-dev libcomedi-dev \
