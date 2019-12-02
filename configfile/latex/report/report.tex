@@ -15,7 +15,7 @@
 
     \subsection{目的}
     项目要求设计一个函数，对于输入字符串S，返回其中符合密码要求的最长word的长度。其中不同word之间以空格分割，word可作为密码格式需满足三个条件，即：
-    \begin{enumerate} [(1)]
+    \begin{enumerate} [\indent (1)]
             \item 仅包含字母或数字字符（A\-Z, a\-z, 0\-9）。
             \item 需要包含偶数个字母（0,2,4，..）。
             \item 需要包含奇数个数字（1,3,5，..）。
@@ -24,19 +24,75 @@
     实现该功能的编程语言不限，字符串S长度N长度在[1..200]之间。
     
     \section{范围}
-    本项目中，由于Python中已经有了具有切片等功能的函数，我们使用Python进行程序的编写，需要实现一个函数：
+    本项目中，需要实现一个函数：
 
-\begin{lstlisting}{language=python}
-def solution(S)
+\begin{lstlisting}{language=C}
+int solution(int S[], int N)
 \end{lstlisting}
 
     编写所得程序可以先通过自己编写的程序进行测试，再通过 codility.com 网站进行测试。
 
-    \section{规格说明}
-    \subsection{设计要求}
+    \section{需求说明}
+    \subsection{需求定义}
+    \begin{enumerate} [\indent 1、]
+        \item 程序能够根据空格位置分割输入的字符串。
+        \item 程序能够检测一个word是否满足作为密码的三个条件。
+        \item 程序可以返回最长密码的长度，如不存在满足要求的word，则返回-1。
+        \item 保证返回长度的正确性。
+    \end{enumerate}
+
+    \subsection{需求规格说明}
+    \begin{enumerate} [\indent 1、]
+        \item 程序中使用切片函数将输入字符串分为多个字符串，或者直接遍字符串逐个处理字符。
+        \item 通过将字符的ASCII值与相应范围的数字比较判定字符是否符合要求，统计个字符数量即可判断是否符合要求。
+        \item 对不同测试集进行测试来检测结果的正确性。
+    \end{enumerate}
+    
     \subsection{设计标准}
+    评分系统:
+
+    10--9 = 非常重要（必须完成）
+    
+    8--7 = 比较重要（能完成最好）
+    
+    6--4 = 重要而不必要（完成最好但是没有必要）
+    
+    3--0 = 基本不重要
+
+    \begin{enumerate} [\indent 1、]
+        \item 准确性（10）--输出结果是否正确。
+        \item 时间复杂度（6）--最坏情况下执行程序所需时间。
+        \item 空间复杂度（6）--程序运行时所占存储空间大小。
+        \item 程序可读性（8）--别人能否读懂此程序。
+        \item 可维护性（7）--修改是否容易。
+    \end{enumerate}
+
     \subsection{成果交付}
-    \section{方法}
+    \begin{enumerate} [\indent 1、]
+        \item 课程报告。
+        \item 项目程序代码。
+        \item 自己的以及网站的测试结果。
+    \end{enumerate}
+    \section{实施方法}
+    \subsection{方法研究}
+    本项目设计不限值设计语言，由于本项目实现功能比较简单，使用不同程序语言编写难度差距不大。
+
+    项目成员对C/C++语言和Python较为熟悉，因此可用其中一种实现。C/C++具有较高的执行效率，而Python则拥有丰富的函数可，无需自己实现基础的功能。
+
+    考虑到所需实现功能不多，Python并不会产生较大优势，可选择使用C语言实现。
+
+    \subsection{概念设计}
+    使用一个for循环遍历字符串S，并统计字母数量CharCount和数字数量NumberCount，如果在遇到空格前遇到非法字符则计数清零、停止计数直到空格处，否则计数到空格处后根据计数值判断是否为合法密码，是则修改最大长度MaxLength。
+
+    遍历结束后返回MaxLength，若MaxLength等于0则返回-1。
+
+    \subsection{时间表}
+    \section{最终设计}
+    \subsection{设计描述}
+    \subsection{原型展示}
+    \subsection{原型测试}
+    \subsection{结果}
+    \section{结论}
 
 \end{spacing}
 \end{document}
