@@ -17,3 +17,11 @@
 * UBUNTU与WINDOWS BOOT MANAGER 共存。
 * 在BIOS中设置启动项顺序为UBUNTU第一。
 
+## 安装后配置
+### 设置时间
+```bash
+sudo ntpdate time.windows.com
+sudo hwclock --localtime --systohc
+```
+修复安装后Windows时间错误问题。
+
