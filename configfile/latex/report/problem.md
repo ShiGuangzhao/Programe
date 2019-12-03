@@ -1,4 +1,4 @@
-\subsubsection{Lesson 90: Tasks from Indeed Prime 2015 challenge--Longest Password}
+Lesson 90: Tasks from Indeed Prime 2015 challenge--Longest Password
 
 You would like to set a password for a bank account. However, there are three restrictions on the format of the password:
 
