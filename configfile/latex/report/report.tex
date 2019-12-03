@@ -27,7 +27,7 @@
     本项目中，需要实现一个函数：
 
 \begin{lstlisting}{language=C}
-int solution(int S[], int N)
+int solution(char *S)
 \end{lstlisting}
 
     编写所得程序可以先通过自己编写的程序进行测试，再通过 codility.com 网站进行测试。
@@ -36,6 +36,7 @@ int solution(int S[], int N)
     \subsection{需求定义}
     \begin{enumerate} [\indent 1、]
         \item 程序能够根据空格位置分割输入的字符串。
+        \item 程序能够判断字符串结束的位置。
         \item 程序能够检测一个word是否满足作为密码的三个条件。
         \item 程序可以返回最长密码的长度，如不存在满足要求的word，则返回-1。
         \item 保证返回长度的正确性。
@@ -44,6 +45,7 @@ int solution(int S[], int N)
     \subsection{需求规格说明}
     \begin{enumerate} [\indent 1、]
         \item 程序中使用切片函数将输入字符串分为多个字符串，或者直接遍字符串逐个处理字符。
+        \item 若遇到空字符NULL表示字符串即结束，停止字符串遍历。
         \item 通过将字符的ASCII值与相应范围的数字比较判定字符是否符合要求，统计个字符数量即可判断是否符合要求。
         \item 对不同测试集进行测试来检测结果的正确性。
     \end{enumerate}
@@ -87,12 +89,220 @@ int solution(int S[], int N)
     遍历结束后返回MaxLength，若MaxLength等于0则返回-1。
 
     \subsection{时间表}
-    \section{最终设计}
-    \subsection{设计描述}
-    \subsection{原型展示}
+    \section{设计描述及原型展示}
+    最终设计程序代码如下：
+\begin{lstlisting}
+#include <stdbool.h>
+int solution(char *S) {
+    int MaxLength = 0;
+    int CharCount = 0;
+    int NumberCount = 0;
+    bool PassWord = true;
+    for(int i = 0; S[i] != 0; i++) {
+        // 0--48, 9--57; A--66, Z--90; a--97, z--122, 空格--32
+        // 未遇到空格且此字符串合法
+        if(PassWord && S[i] != ' ') {
+            if(S[i] <= '9' && S[i] >= '0') {
+                NumberCount++;
+            }
+            else if((S[i] >= 'a' && S[i] <= 'z') \
+                    || (S[i] >= 'A' && S[i] <= 'Z')) {
+                CharCount++;
+            }
+            else {
+                PassWord = false;
+                NumberCount = 0;
+                CharCount = 0;
+            }
+        }
+        else {
+            // 合法字符串遇到空格
+            if(PassWord) {
+                if(MaxLength < NumberCount + CharCount \
+                        && NumberCount % 2 == 1 \
+                        && CharCount % 2 == 0)
+                    MaxLength = NumberCount + CharCount;
+                NumberCount = 0;
+                CharCount = 0;
+                PassWord = true;
+            }
+            // 不合法字符串空格
+            else if(S[i] == ' ') {
+                PassWord = true;
+            }
+            // 不合法字符串非空格
+        }
+    }
+    // 最后一个字符串是否合格
+    if(PassWord) {
+        if(MaxLength < NumberCount + CharCount \
+                && NumberCount % 2 == 1 \
+                && CharCount % 2 == 0)
+            MaxLength = NumberCount + CharCount;
+    }
+    return MaxLength == 0? -1 : MaxLength;
+}
+\end{lstlisting}
+
+    第一行 \lstinline{#include <stdbool.h>} 用于包含stdbool.h头文件起原因是linux环境下stdio.h中没有包含该文件，因此直接使用bool类型会报错。
+    
+    之后的几行定义函数以及定义和初始化变量。
+
+    for循环 \lstinline{for(int i = 0; S[i] != 0; i++)} 遍历字符串S，当遇到空字符是遍历结束。
+
+\begin{lstlisting}
+    // 未遇到空格且此字符串合法
+    if(PassWord && S[i] != ' ') {
+        if(S[i] <= '9' && S[i] >= '0') {
+            NumberCount++;
+        }
+        else if((S[i] >= 'a' && S[i] <= 'z') \
+                || (S[i] >= 'A' && S[i] <= 'Z')) {
+            CharCount++;
+        }
+        else {
+            PassWord = false;
+            NumberCount = 0;
+            CharCount = 0;
+        }
+    }
+\end{lstlisting}
+
+    当遇到的不是空格且当前字符串状态为合法时，如果为数字则 NumberCount 加1，若为字母则 CharCount 加1，否则表示遇到了非法字符，改变状态为非法并清零计数器。
+
+\begin{lstlisting}
+    else {
+        // 合法字符串遇到空格
+        if(PassWord) {
+            if(MaxLength < NumberCount + CharCount \
+                    && NumberCount % 2 == 1 \
+                    && CharCount % 2 == 0)
+                MaxLength = NumberCount + CharCount;
+            NumberCount = 0;
+            CharCount = 0;
+            PassWord = true;
+        }
+        // 不合法字符串空格
+        else if(S[i] == ' ') {
+            PassWord = true;
+        }
+        // 不合法字符串非空格
+    }
+\end{lstlisting}
+
+    如不满足之前的条件，则存在三种情况：合法字符串遇到了空格、不合法字符串且未遇到空格或不合法字符串遇到空格。对第一种情况判定密码是否合法并与最大值比较，若合法且大于最大值，则赋值给最大值，然后还原计数状态；第二种情况不做处理；第三种情况需还原计数状态。
+
+    之后的几行测试最后一个word，然后返回结果。
+
     \subsection{原型测试}
-    \subsection{结果}
+    编写测试主函数如下：
+\begin{lstlisting}
+int main(void) {
+   char str[] = "test aa1 a0A pass007 ?xy1";
+   printf("%s\n", str);
+   printf("%d\n", solution(str));
+   return 0;
+}
+\end{lstlisting}
+
+    改变字符串的为以下的不同值测试不同情况下的结果。
+
+\begin{lstlisting}
+    str1 = ""   // 测试空字符串
+    str2 = "as2   235 f  ewf" // 包含多个连续空格的字符串
+    str3 = "hi 34% dqew11 *gtDGF Df34F1A d" // 普通字符串
+    str4 = "ss 33 f34#^ EW" // 无合法密码的字符串
+\end{lstlisting}
+
+    经测试结果准确无误。
+
+    使用 codility.com 网站进行测试，得到结果如下：
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{./test_result.png}
+\end{center}
+
+    对不同情况下测试结果均准确，满足设计要求。
+
     \section{结论}
+    从测试结果可以看到，实验程序设计满足要求。程序能够保证输出结果的准确性；程序时间复杂度为线性时间，即使在输入较复杂的情况下仍然能够较快输出结果；程序遍历字符串而非使用切片操作复制为多个字符串，保证了较低的空间复杂度；程序可读性和可维护性均较强。
+
+    设计结果满足设计要求。
+
+    \section{附录}
+    \subsection{项目要求原文}
+    \input{problem.md}
+
+    \subsection{项目代码}
+\begin{lstlisting}
+/*************************************************************************
+    > File Name: longestpassword.c
+    > Author: ShiGuangzhao
+    > Mail: Guangzhao_Shi@163.com 
+    > Created Time: 2019年12月02日 星期一 21时34分10秒
+ ************************************************************************/
+
+#include <stdbool.h>
+#include <stdio.h>
+
+int solution(char *S) {
+    int MaxLength = 0;
+    int CharCount = 0;
+    int NumberCount = 0;
+    bool PassWord = true;
+    for(int i = 0; S[i] != 0; i++) {
+        // 0--48, 9--57; A--66, Z--90; a--97, z--122, 空格--32
+        // 遇到空格或此字符串不合法
+        if(PassWord && S[i] != ' ') {
+            if(S[i] <= '9' && S[i] >= '0') {
+                NumberCount++;
+            }
+            else if((S[i] >= 'a' && S[i] <= 'z') \
+                    || (S[i] >= 'A' && S[i] <= 'Z')) {
+                CharCount++;
+            }
+            else {
+                PassWord = false;
+                NumberCount = 0;
+                CharCount = 0;
+            }
+        }
+        else {
+            // 合法字符串遇到空格
+            if(PassWord) {
+                if(MaxLength < NumberCount + CharCount \
+                        && NumberCount % 2 == 1 \
+                        && CharCount % 2 == 0)
+                    MaxLength = NumberCount + CharCount;
+                NumberCount = 0;
+                CharCount = 0;
+                PassWord = true;
+            }
+            // 不合法字符串空格
+            else if(S[i] == ' ') {
+                PassWord = true;
+            }
+            // 不合法字符串非空格
+        }
+    }
+
+    // 最后一个字符串是否合格
+    if(PassWord) {
+        if(MaxLength < NumberCount + CharCount \
+                && NumberCount % 2 == 1 \
+                && CharCount % 2 == 0)
+            MaxLength = NumberCount + CharCount;
+    }
+    return MaxLength == 0? -1 : MaxLength;
+}
+
+int main(void) {
+   char str[] = "test aa1 a0A pass007 ?xy1";
+   printf("%s\n", str);
+   printf("%d\n", solution(str));
+   return 0;
+}
+\end{lstlisting}
 
 \end{spacing}
 \end{document}

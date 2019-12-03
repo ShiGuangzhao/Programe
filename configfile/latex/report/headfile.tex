@@ -10,14 +10,14 @@
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage[top=30mm,bottom=30mm,left=20mm,right=20mm]{geometry}
-\usepackage{listings}
 \usepackage{amsmath}
 \usepackage{enumerate}
 \usepackage{booktabs}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 
-\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true, language=bash, xleftmargin=2em, xrightmargin=1em,  aboveskip=1em}
+\input{../code_style/complex}
+\lstset{language=C}
 
 \pagestyle{fancy}
 \lhead{\kaishu~Task 1: Longest Password~}
