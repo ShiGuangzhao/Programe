@@ -39,7 +39,7 @@ int solution(char *S) {
                     MaxLength = NumberCount + CharCount;
                 NumberCount = 0;
                 CharCount = 0;
-                PassWord = true;
+                /* PassWord = true; */
             }
             // 不合法字符串空格
             else if(S[i] == ' ') {
