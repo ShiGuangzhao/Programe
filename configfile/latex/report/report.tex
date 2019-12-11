@@ -10,13 +10,14 @@
 % \setcounter{page}{1}
     \section{项目简介}
     \subsection{背景}
-    本项目为南京大学电子学院《软件工程导学》课程作业。项目来源于为Codility.com网站 Lesson 90: Tasks from Indeed Prime 2015 challenge中的任务1。 
+    本项目为南京大学电子学院《软件工程导学》课程作业。项目来源于为codility.com网站 Lesson 90: Tasks from Indeed Prime 2015 challenge中的任务1。 
+
     项目要求写一个程序实现题目中要求的功能，编程语言不限，且本题对时间复杂读没有要求，只需保证正确性即可。
 
     \subsection{目的}
     项目要求设计一个函数，对于输入字符串S，返回其中符合密码要求的最长word的长度。其中不同word之间以空格分割，word可作为密码格式需满足三个条件，即：
     \begin{enumerate} [\indent (1)]
-            \item 仅包含字母或数字字符（A\-Z, a\-z, 0\-9）。
+            \item 仅包含字母或数字字符（A -- Z, a -- z, 0 -- 9）。
             \item 需要包含偶数个字母（0,2,4，..）。
             \item 需要包含奇数个数字（1,3,5，..）。
     \end{enumerate}
@@ -25,12 +26,13 @@
     
     \section{范围}
     本项目中，需要实现一个函数：
-
 \begin{lstlisting}{language=C}
 int solution(char *S)
 \end{lstlisting}
 
     编写所得程序可以先通过自己编写的程序进行测试，再通过 codility.com 网站进行测试。
+
+    可以认为自己的测试为项目工程中的测试，而网站测试则为客户验收测试。
 
     \section{需求说明}
     \subsection{需求定义}
@@ -44,10 +46,10 @@ int solution(char *S)
 
     \subsection{需求规格说明}
     \begin{enumerate} [\indent 1、]
-        \item 程序中使用切片函数将输入字符串分为多个字符串，或者直接遍字符串逐个处理字符。
-        \item 若遇到空字符NULL表示字符串即结束，停止字符串遍历。
-        \item 通过将字符的ASCII值与相应范围的数字比较判定字符是否符合要求，统计个字符数量即可判断是否符合要求。
-        \item 对不同测试集进行测试来检测结果的正确性。
+        \item 程序中使用切片函数将输入字符串分为多个字符串，或者直接遍历字符串逐个处理字符。
+        \item 若遇到空字符NULL (S[i] = 0) 即表示字符串结束，停止字符串遍历。
+        \item 通过将字符的ASCII值与相应范围的数字或字母比较并计数判定字符是否符合要求，统计个字符数量即可判断是否符合要求。
+        \item 设计测试集进行测试来检测结果的正确性。
     \end{enumerate}
     
     \subsection{设计标准}
@@ -71,9 +73,9 @@ int solution(char *S)
 
     \subsection{成果交付}
     \begin{enumerate} [\indent 1、]
-        \item 课程报告。
+        \item 课程报告文档。
         \item 项目程序代码。
-        \item 自己的以及网站的测试结果。
+        \item 测试集以及的测试结果。
     \end{enumerate}
     \section{实施方法}
     \subsection{方法研究}
@@ -88,19 +90,22 @@ int solution(char *S)
 
     遍历结束后返回MaxLength，若MaxLength等于0则返回-1。
 
-    算法流程图如下图所示：
-\end{spacing}
-\begin{spacing}{1}
-\songti\zihao{-5}
+    算法流程图如图\ref{fig:liucheng}所示：
+
     \input{flowchart}
-\end{spacing}
-\begin{spacing}{1.5}
-\songti\zihao{-4}
+
+   其中初始化操作初始化字母计数CharCount和数字计数NumberCount为0，初始化PassWord为真，表示当前word直到该位置为有效密码。MaxLength为遍历到该位置的最长密码长度，i为遍历用到的迭代器变量。
+   
+   更新MaxLength方法为：判断NumberCount是否为奇数，CharCount是否为欧式，如果是则比较NumberCount + CharCount和MaxLength的大小，置新MaxLength为两者中的较大者。
 
     \subsection{时间表}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{./gannt.png}
-\end{center}
+    项目时间表如图\ref{fig:gannt}所示。
+\begin{figure}[htbp]
+    \centering
+    {\includegraphics[width=0.8\textwidth]{./gannt2.png}
+    \caption{项目甘特图}
+    \label{fig:gannt}}
+\end{figure}
 
     \section{项目实施}
     \subsection{设计描述及原型展示}
@@ -163,7 +168,6 @@ int solution(char *S) {
     之后的几行定义函数以及定义和初始化变量。
 
     for循环 \lstinline{for(int i = 0; S[i] != 0; i++)} 遍历字符串S，当遇到空字符是遍历结束。
-
 \begin{lstlisting}
     // 未遇到空格且此字符串合法
     if(PassWord && S[i] != ' ') {
@@ -183,7 +187,6 @@ int solution(char *S) {
 \end{lstlisting}
 
     当遇到的不是空格且当前字符串状态为合法时，如果为数字则 NumberCount 加1，若为字母则 CharCount 加1，否则表示遇到了非法字符，改变状态为非法并清零计数器。
-
 \begin{lstlisting}
     else {
         // 合法字符串遇到空格
@@ -209,32 +212,25 @@ int solution(char *S) {
     之后的几行测试最后一个word，然后返回结果。
 
     \subsection{原型测试}
-    编写测试主函数如下：
-\begin{lstlisting}
-int main(void) {
-   char str[] = "test aa1 a0A pass007 ?xy1";
-   printf("%s\n", str);
-   printf("%d\n", solution(str));
-   return 0;
-}
-\end{lstlisting}
+    从图\ref{fig:liucheng}可以看到，字符S[i]有四种情况，即为空格、字母、数字或非法字符，输入前当前word状态为有效或无效，即之前是否有输入无效字符。
+    
+    因此对于输入字符S[i]程序分八种情况进行处理，即当前字符串有效或无效时输入四种S[i]。对于更新MaxLength的程序，需要考虑输入字母字符个数是否满足条件，以及考虑与就MaxLength的比较。
 
-    改变字符串的为以下的不同值测试不同情况下的结果。
-
+    设计测试集如以下清单所示。
 \begin{lstlisting}
-    str1 = ""   // 测试空字符串
-    str2 = "as2   235 f  ewf" // 包含多个连续空格的字符串
-    str3 = "hi 34% dqew11 *gtDGF Df34F1A d" // 普通字符串
-    str4 = "ss 33 f34#^ EW" // 无合法密码的字符串
+    str1 = "sdK1 Ai1 S13P5 1" // 测试更新MaxLength程序
 \end{lstlisting}
 
     经测试结果准确无误。
 
-    使用 codility.com 网站进行测试，得到结果如下：
+    使用 codility.com 网站进行测试，得到结果如图\ref{fig:test}所示。
 
-\begin{center}
-\includegraphics[width=0.8\textwidth]{./test_result.png}
-\end{center}
+\begin{figure}[htbp]
+    \centering
+    {\includegraphics[width=0.8\textwidth]{./test_result.png}
+    \caption{网站测试结果}}
+    \label{fig:test}
+\end{figure}
 
     对不同情况下测试结果均准确，满足设计要求。
 
