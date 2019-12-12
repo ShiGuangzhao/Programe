@@ -1,9 +1,9 @@
-\input{headfile}
+\input{config/headfile}
 
 \begin{document}
 
-\input{cover}
-% \input{title}
+\input{config/cover}
+% \input{config/title}
 
 \begin{spacing}{1.5}
 \songti\zihao{-4}
@@ -27,7 +27,7 @@
     \section{范围}
     本项目中，需要实现一个函数：
 \begin{lstlisting}{language=C}
-int solution(char *S)
+int solution(char *S) {...}
 \end{lstlisting}
 
     编写所得程序可以先通过自己编写的程序进行测试，再通过 codility.com 网站进行测试。
@@ -90,9 +90,9 @@ int solution(char *S)
 
     遍历结束后返回MaxLength，若MaxLength等于0则返回-1。
 
-    算法流程图如图\ref{fig:liucheng}所示：
+    算法流程图如图\ref{fig:liucheng}所示。
 
-    \input{flowchart}
+    \input{config/flowchart}
 
    其中初始化操作初始化字母计数CharCount和数字计数NumberCount为0，初始化PassWord为真，表示当前word直到该位置为有效密码。MaxLength为遍历到该位置的最长密码长度，i为遍历用到的迭代器变量。
    
@@ -102,7 +102,7 @@ int solution(char *S)
     项目时间表如图\ref{fig:gannt}所示。
 \begin{figure}[htbp]
     \centering
-    {\includegraphics[width=0.8\textwidth]{./gannt2.png}
+    {\includegraphics[width=0.8\textwidth]{./figure/gannt2.png}
     \caption{项目甘特图}
     \label{fig:gannt}}
 \end{figure}
@@ -214,22 +214,38 @@ int solution(char *S) {
     \subsection{原型测试}
     从图\ref{fig:liucheng}可以看到，字符S[i]有四种情况，即为空格、字母、数字或非法字符，输入前当前word状态为有效或无效，即之前是否有输入无效字符。
     
-    因此对于输入字符S[i]程序分八种情况进行处理，即当前字符串有效或无效时输入四种S[i]。对于更新MaxLength的程序，需要考虑输入字母字符个数是否满足条件，以及考虑与就MaxLength的比较。
+    因此对于输入字符S[i]程序分八种情况进行处理，即当前字符串有效或无效时输入四种S[i]。对于更新MaxLength的程序，需要考虑输入字母字符个数是否满足条件，以及考虑与就MaxLength的比较，当没有满足条件字符串时是否返回-1。
 
     设计测试集如以下清单所示。
 \begin{lstlisting}
-    str1 = "sdK1 Ai1 S13P5 1" // 测试更新MaxLength程序
+// 测试更新MaxLength程序，sdk1不满足字母为偶数个
+// S13P56不满足数字为奇数个，返回结果应该为3
+str1 = "sdK1 Ai1 S13P56 1" 
+// 当没有满足条件字符串时返回-1
+str2 = "d$dgew d23 3353dd %%%feds"
+// AS1$测试遇到非法符号时的处理
+// SD1&x测试合法字符串遇到非法字符，非法字符串遇到空格等
+str3 = "sA1 AS1$ SD1&× "
+// 测试字母与空格，合法字符串遇到空格等
+str4 = "test 5 a0A Pass007 ?xy1"
 \end{lstlisting}
 
-    经测试结果准确无误。
+    经测试结果准确无误，测试结果截图如图\ref{fig:result}所示。
+\begin{figure}[htbp]
+    \centering
+    {\includegraphics[width=0.8\textwidth]{./figure/result0.png}
+    \caption{原型测试结果}
+    \label{fig:result}}
+\end{figure}
 
-    使用 codility.com 网站进行测试，得到结果如图\ref{fig:test}所示。
+
+    使用 codility.com 网站进行验收测试，得到结果如图\ref{fig:test}所示。
 
 \begin{figure}[htbp]
     \centering
-    {\includegraphics[width=0.8\textwidth]{./test_result.png}
-    \caption{网站测试结果}}
-    \label{fig:test}
+    {\includegraphics[width=0.8\textwidth]{./figure/test_result.png}
+    \caption{验收测试结果}
+    \label{fig:test}}
 \end{figure}
 
     对不同情况下测试结果均准确，满足设计要求。
@@ -241,78 +257,15 @@ int solution(char *S) {
 
     \section{附录}
     \subsection{项目要求原文}
-    \input{problem.md}
+    \input{doc/problem.md}
 
     \subsection{项目代码}
-\begin{lstlisting}
-/*************************************************************************
-    > File Name: longestpassword.c
-    > Author: ShiGuangzhao
-    > Mail: Guangzhao_Shi@163.com 
-    > Created Time: 2019年12月02日 星期一 21时34分10秒
- ************************************************************************/
+    % \lstinputlisting[firstline=300,lastline=500]{file.cc}.
+    \lstinputlisting{doc/longestpassword.c}
 
-#include <stdbool.h>
-#include <stdio.h>
+    \subsection{测试集}
+    \lstinputlisting{doc/test-input.txt}
 
-int solution(char *S) {
-    int MaxLength = 0;
-    int CharCount = 0;
-    int NumberCount = 0;
-    bool PassWord = true;
-    for(int i = 0; S[i] != 0; i++) {
-        // 0--48, 9--57; A--66, Z--90; a--97, z--122, 空格--32
-        // 遇到空格或此字符串不合法
-        if(PassWord && S[i] != ' ') {
-            if(S[i] <= '9' && S[i] >= '0') {
-                NumberCount++;
-            }
-            else if((S[i] >= 'a' && S[i] <= 'z') \
-                    || (S[i] >= 'A' && S[i] <= 'Z')) {
-                CharCount++;
-            }
-            else {
-                PassWord = false;
-                NumberCount = 0;
-                CharCount = 0;
-            }
-        }
-        else {
-            // 合法字符串遇到空格
-            if(PassWord) {
-                if(MaxLength < NumberCount + CharCount \
-                        && NumberCount % 2 == 1 \
-                        && CharCount % 2 == 0)
-                    MaxLength = NumberCount + CharCount;
-                NumberCount = 0;
-                CharCount = 0;
-                PassWord = true;
-            }
-            // 不合法字符串空格
-            else if(S[i] == ' ') {
-                PassWord = true;
-            }
-            // 不合法字符串非空格
-        }
-    }
-
-    // 最后一个字符串是否合格
-    if(PassWord) {
-        if(MaxLength < NumberCount + CharCount \
-                && NumberCount % 2 == 1 \
-                && CharCount % 2 == 0)
-            MaxLength = NumberCount + CharCount;
-    }
-    return MaxLength == 0? -1 : MaxLength;
-}
-
-int main(void) {
-   char str[] = "test aa1 a0A pass007 ?xy1";
-   printf("%s\n", str);
-   printf("%d\n", solution(str));
-   return 0;
-}
-\end{lstlisting}
 
 \end{spacing}
 \end{document}

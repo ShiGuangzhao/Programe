@@ -1,11 +1,5 @@
-\documentclass[UTF8]{ctexart}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-\usetikzlibrary{calc}
-\usepackage[top=30mm,bottom=30mm,left=20mm,right=20mm]{geometry}
-\begin{document}
-% \thispagestyle{empty}
- % 流程图定义基本形状
+\begin{figure}[htp]
+% 流程图定义基本形状
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
 \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30, text width=3cm]
 \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30, text width=3cm]
@@ -19,18 +13,18 @@
 \node (proInit) [process, below of=in1] {初始化i=0，设置密码有效等};
     % int MaxLength = 0;int CharCount = 0;
     % int NumberCount = 0;bool PassWord = true;
-\node (dec0) [decision, below of=proInit] {S[i]=0?};
-\node (dec1) [decision, below of=dec0, yshift=-4cm] {密码有效且S[i]非空格};
-    \node (dec11) [decision, left of=dec1, xshift=-3cm, yshift=-3cm] {S[i]类型？};
+\node (dec0) [decision, below of=proInit, yshift = -1cm] {S[i]=0?};
+\node (dec1) [decision, below of=dec0, yshift=-3cm] {密码有效且S[i]非空格};
+    \node (dec11) [decision, left of=dec1, xshift=-3cm, yshift=-4cm] {S[i]类型？};
         \node (pro11a) [process, right of=dec11, xshift=3cm] {设置密码无效};
         \node (pro11b) [process, below of=dec11, yshift=-1cm] {相应计数器加1};
-    \node (dec12) [decision, right of=dec1, xshift=2cm,yshift=-3cm] {当前状态?};
+    \node (dec12) [decision, right of=dec1, xshift=2cm,yshift=-4cm] {当前状态?};
         \node (pro12a) [process, below of=dec12, yshift=-1cm] {计算新MaxLength};
             \node (pro12a1) [process, left of=pro12a, xshift=-2cm] {清空计数器};
         \node (pro12b) [process, right of=dec12, xshift=2cm, yshift=-3cm] {设置密码有效};
         
 
-\node (nodeiadd) [process, below of=pro11b, yshift=-1cm] {i++};
+\node (nodeiadd) [process, below of=pro11b] {i++};
 \node (nodetestlast) [process,right of=dec0,xshift=4cm] {更新MaxLength};
 
 \node (out1) [io, below of=nodetestlast] {输出MaxLength};
@@ -40,15 +34,16 @@
 \draw [arrow](start) -- (in1);
 \draw [arrow](in1) -- (proInit);
 \draw [arrow](proInit) -- (dec0);
-    \draw [arrow](dec0) -- node[anchor=south] {否} (dec1);
-    \draw [arrow](dec0) -- node[anchor=west] {是} (nodetestlast);
+    \draw [arrow](dec0) -- node[anchor=east] {否} (dec1);
+    \draw [arrow](dec0) -- node[anchor=south] {是} (nodetestlast);
 \draw [arrow](dec1) -| node[anchor=east] {是} (dec11);
-    \draw [arrow](dec11) -- node[anchor=east]{非法}(pro11a);
+    \draw [arrow](dec11) -- node[anchor=south]{非法}(pro11a);
     \draw [arrow](dec11) -- node[anchor=south]{字母或数字}(pro11b);
 \draw [arrow](dec1) -| node[anchor=west] {否} (dec12);
     \draw [arrow](dec12) -- node[anchor=south]{密码有效}(pro12a);
         \draw [arrow](pro12a) -- (pro12a1);
-    \draw [arrow](dec12) -| node[anchor=west]{为空格}(pro12b);
+    \draw [arrow](dec12) -| node[anchor=south]{无效且为空格}(pro12b);
+    \draw [arrow](dec12) -- ($(dec12.east) + (0.5,0)$) |- node[anchor=south]{无效非空格}(nodeiadd);
 
 \draw [arrow](pro11b) -- (nodeiadd);
     \draw [arrow](pro11a) -- (pro12a1);
@@ -59,4 +54,7 @@
 \draw [arrow](nodetestlast) -- (out1);
 \draw [arrow](out1) -- (stop);
 \end{tikzpicture}
-\end{document}
+
+\caption{程序流程图}
+\label{fig:liucheng}
+\end{figure}
