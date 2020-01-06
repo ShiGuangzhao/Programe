@@ -1,0 +1,39 @@
+\documentclass[a4paper,11pt,onecolumn,twoside]{article}
+\usepackage{ctex}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+\usepackage{array}  
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[titletoc]{appendix}
+\usepackage[hyphens]{url}
+\usepackage{cite}
+\usepackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  lengths
+%    下面的命令重定义页面边距，使其符合中文刊物习惯。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{-0.9cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{17.00cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+
+
+\makeatletter
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+\makeatother
+
+%---------------------------------------------------------------------
+%	引用文献设置为上标
+%---------------------------------------------------------------------
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+

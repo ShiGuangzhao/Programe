@@ -1,0 +1,81 @@
+\documentclass[a4paper,11pt,onecolumn,twoside]{article}
+\usepackage{ctex}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{array}  
+\usepackage{fontspec,xunicode,xltxtra}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[titletoc]{appendix}
+\usepackage[hyphens]{url}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode} % 插入代码
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true, language=bash, xleftmargin=2em, xrightmargin=1em,  aboveskip=1em}
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  lengths
+%    下面的命令重定义页面边距，使其符合中文刊物习惯。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtolength{\topmargin}{-54pt}
+\setlength{\oddsidemargin}{-0.9cm}  % 3.17cm - 1 inch
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\textwidth}{17.00cm}
+\setlength{\textheight}{24.00cm}    % 24.62
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 首页页眉页脚定义
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \fancypagestyle{plain}{
+% \fancyhf{}
+% \lhead{第~XX~卷\quad 第~X~期\\
+% \scriptsize{XXXX~年~XX~月}}
+% \chead{\centering{X~~X~~X~~期~~刊\\
+% \scriptsize{\textbf{The trip to get the Sutra}}}}
+% \rhead{Vol. XX, No. XX\\
+% \scriptsize{October, 2004}}
+% \lfoot{}
+% \cfoot{}
+% \rfoot{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 首页后根据奇偶页不同设置页眉页脚
+% R,C,L分别代表左中右，O,E代表奇偶页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[RE]{第~XX~卷}
+% \fancyhead[CE]{西~~天~~取~~经~~记}
+% \fancyhead[LE,RO]{\thepage}
+% \fancyhead[CO]{猴~~哥等：王母娘娘寿筵上蟠桃生长过程仿真与分析}
+% \fancyhead[LO]{第~X~期}
+% \lfoot{}
+% \cfoot{}
+% \rfoot{}
+
+\makeatletter
+\newenvironment{figurehere}
+  {\def\@captype{figure}}
+  {}
+  % \newcommand\figcaption{\def\@captype{figure}\caption}
+  % \newcommand\tabcaption{\def\@captype{table}\caption}
+\makeatother
+
+
+%---------------------------------------------------------------------
+%	引用文献设置为上标
+%---------------------------------------------------------------------
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+

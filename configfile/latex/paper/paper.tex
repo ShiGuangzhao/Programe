@@ -1,41 +1,8 @@
-\documentclass[a4paper,11pt,onecolumn,twoside]{article}
-\usepackage{ctex}
-\usepackage{times}
-\usepackage{setspace}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{multicol}
-\usepackage{wrapfig}
-\usepackage{array}  
-\usepackage{fontspec,xunicode,xltxtra}
-\usepackage{titlesec}
-\usepackage{titletoc}
-\usepackage[titletoc]{appendix}
-\usepackage[hyphens]{url}
-\usepackage{cite}
-\usepackage{listings}
-\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode} % 插入代码
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+\input{headfile}
 
-\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true, language=bash, xleftmargin=2em, xrightmargin=1em,  aboveskip=1em}
-  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  lengths
-%    下面的命令重定义页面边距，使其符合中文刊物习惯。
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\addtolength{\topmargin}{-54pt}
-\setlength{\oddsidemargin}{-0.9cm}  % 3.17cm - 1 inch
-\setlength{\evensidemargin}{\oddsidemargin}
-\setlength{\textwidth}{17.00cm}
-\setlength{\textheight}{24.00cm}    % 24.62
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
 % 标题，作者，通信地址定义
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%
 \songti
 \title{\huge{“跳房子”智能教具的设计与实现}
 % \thanks{收稿日期:~XXXX$-$XX$-$XX.i.}
@@ -47,61 +14,15 @@
 （南京大学电子科学与工程学院, 江苏省~南京市~211046） \\[2pt]}
 \date{}  % 这一行用来去掉默认的日期显示
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 首页页眉页脚定义
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \fancypagestyle{plain}{
-% \fancyhf{}
-% \lhead{第~XX~卷\quad 第~X~期\\
-% \scriptsize{XXXX~年~XX~月}}
-% \chead{\centering{X~~X~~X~~期~~刊\\
-% \scriptsize{\textbf{The trip to get the Sutra}}}}
-% \rhead{Vol. XX, No. XX\\
-% \scriptsize{October, 2004}}
-% \lfoot{}
-% \cfoot{}
-% \rfoot{}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 首页后根据奇偶页不同设置页眉页脚
-% R,C,L分别代表左中右，O,E代表奇偶页
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \pagestyle{fancy}
-% \fancyhf{}
-% \fancyhead[RE]{第~XX~卷}
-% \fancyhead[CE]{西~~天~~取~~经~~记}
-% \fancyhead[LE,RO]{\thepage}
-% \fancyhead[CO]{猴~~哥等：王母娘娘寿筵上蟠桃生长过程仿真与分析}
-% \fancyhead[LO]{第~X~期}
-% \lfoot{}
-% \cfoot{}
-% \rfoot{}
-
-\makeatletter
-\newenvironment{figurehere}
-  {\def\@captype{figure}}
-  {}
-  % \newcommand\figcaption{\def\@captype{figure}\caption}
-  % \newcommand\tabcaption{\def\@captype{table}\caption}
-\makeatother
-
-
-%---------------------------------------------------------------------
-%	引用文献设置为上标
-%---------------------------------------------------------------------
-\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
-
 \begin{document}
 \maketitle
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
 %  中文摘要
 %  调整摘要、关键词，中图分类号的页边距
 %  中英文同时调整
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\oddsidemargin}{ 1cm}  % 3.17cm - 1 inch
+%%%%%
+\setlength{\oddsidemargin}{1cm}  % 3.17cm - 1 inch
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\textwidth}{13.50cm}
 \vspace{-.8cm}
@@ -111,9 +32,10 @@
 \heiti 关键词\quad\kaishu 智能玩具；跳房子；ZigBee；树莓派；幼儿教育\\
 \heiti 中图分类号\quad TS958.28\qquad  \heiti 文献标识码\quad B}
 \end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
 %  英文摘要
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%
 \vspace{.1cm}
 \begin{center}
 \parbox{\textwidth}{
@@ -129,21 +51,21 @@
 \end{center}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%
 %  文章编号(左上角)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
 % \begin{minipage}[c]{10cm}
 % \vspace{-35.5cm}
 % 文章编号~~~~1005$-$0388(2004)05$-$0505$-$04
 % \end{minipage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%
 %  恢复正文页边距
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
 \setlength{\oddsidemargin}{-.5cm}  % 3.17cm - 1 inch
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\textwidth}{17.00cm}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %  分栏开始
 % \begin{multicols}{2}
 
@@ -260,9 +182,9 @@
 
 \end{spacing}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%
 %  参考文献
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%
 \small
 \begin{thebibliography}{99}
 \setlength{\parskip}{0pt}  %段落之间的竖直距离
@@ -283,15 +205,6 @@
 \bibitem{14}王风. 基于 CC2530 的 ZigBee 无线传感器网络的设计与实现 [D]. 西安电子科技大学, 2012.
 \bibitem{15}章伟聪, 俞新武, 李忠成. 基于 CC2530 及 ZigBee 协议栈设计无线网络传感器节点 [J]. 计算机系统应用, 2011,20(07):184-187+120.
 
-
-
-% \bibitem{chuanchen}罗红辉.民间传统儿童游戏的传承与创新[J].学前教育研究,2014(11):67-69.
-% \bibitem{youeryuan}彭海蕾. 幼儿园游戏教学研究 [D]. 西北师范大学, 2002.
-
-
-% \bibitem{cheche}彭卫东, 周超. 具有语音和图像识别及跟踪功能的智能玩具车设计 [J]. 科学技术与工程, 2012,12(16):3880-3884.
-% \bibitem{xiaoche}董胡,马振中.基于单片机的智能玩具小车设计[J].微型电脑应用,2014,30(09):14-16.
-% \bibitem{wanju}海广, 李洪鹏, 余震. 基于 arduino 单片机控制的无线儿童玩具设计及可视化实现 [J]. 科技创业月刊, 2013,26(04):193-196.
 
 \end{thebibliography}
 {
