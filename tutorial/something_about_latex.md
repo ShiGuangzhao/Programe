@@ -35,5 +35,11 @@ xelatex paper.tex   # 会生成paper.aux文件
 bibtex paper.aux    # 生成paper.bbl即为参考文献
 xelatex paper.tex   # 加入生成的参考文献
 ```
-由于编译后只会加入引用了的文献，因此从EndNote导出时不必担心导出了却用不到。
+由于编译后只会加入引用了的文献，因此从EndNote导出时不必担心导出了却用不到，如果改变了引用到的文献，需重新编译。
+
+### 存在的问题
+bibtex格式文件存储于`texlive\2019\texmf-dist\bibtex\bst\`文件夹下，格式后缀名为`.bst`，经测试发现其中的`gbt7714`格式并不是我们通常使用的国标参考文献引用方式。
+
+国标有2005和2015两个版本，这里先不做讨论，使用方法参考链接：[2005](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)、[2015](https://github.com/CTeX-org/gbt7714-bibtex-style)、[南京大学学位论文模板](https://github.com/solrex/njuthesis)。
+
 
